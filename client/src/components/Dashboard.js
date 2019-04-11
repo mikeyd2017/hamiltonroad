@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Image from './Image';
-import data from '../data.json';
+import cards from '../data.js';
 //import { Link } from 'react-router-dom';
 
 class Dashboard extends Component {
-    createImage(image) {
-        return <Image source={image} key={image}/>;
+
+    createImage(cards) {
+    return <Image source={cards.image} key={cards.image} title={cards.name}/>;
     }
 
-    createImages(images) {
-        return images.map(this.createImage);
+    createImages(cards) {
+        return cards.map(this.createImage);
     }
 
     render() {
@@ -17,7 +19,7 @@ class Dashboard extends Component {
             <div>
                 <div className="row">
                     <div className="col-sm-12 text-center">
-                        {this.createImages(data.images)}
+                        {this.createImages(cards)}
                     </div>
                 </div>
             </div>
