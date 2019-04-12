@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Image from './Image';
 import cards from '../data.js';
+import { Row } from 'reactstrap';
 //import { Link } from 'react-router-dom';
 
 class Dashboard extends Component {
@@ -17,11 +18,9 @@ class Dashboard extends Component {
     render() {
         return (
             <div>
-                <div className="row">
-                    <div className="col-sm-12 text-center">
-                        {this.createImages(cards)}
-                    </div>
-                </div>
+                <Row>
+                    {this.createImages(cards)}
+                </Row>
             </div>
         )
     }

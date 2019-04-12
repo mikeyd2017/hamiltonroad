@@ -4,14 +4,9 @@ import { Link } from 'react-router-dom';
 import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
 import $ from 'jquery';
 
-const dropdownStyle = {
-    display: 'none',
-    position: 'absolute',
-    backgroundColor: '#f9f9f9',
-    minWidth: '160px',
-    boxShadow: '0px 8px 16px 0px rgba(0,0,0,0.2)',
-    padding: '12px 16px',
-    zIndex: '1'
+const navFont = {
+  fontWeight: "bold",
+  color: "white"
 }
 
 
@@ -34,7 +29,7 @@ class Header extends Component {
       render() {
         return (
           <div>
-            <Nav tabs>
+            <Nav tabs  style={navFont}>
               <NavItem>
                 <NavLink href="/" active>Hamilton Road</NavLink>
               </NavItem>
@@ -56,9 +51,7 @@ class Header extends Component {
               <NavItem>
                 <NavLink href="/bags">Another Link</NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink disabled href="#">Disabled Link</NavLink>
-              </NavItem>
+
             </Nav>
           </div>
         );

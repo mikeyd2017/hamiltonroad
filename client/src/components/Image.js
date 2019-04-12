@@ -24,13 +24,18 @@ const Image = (props) => {
     const titleStyle = {
       margin: '2% 0px 2% 31.5%'
     }
+
+    const cardStyle = {
+      borderRadius: "px"
+    }
+
       switch (props.auth)
       {
         case false:
             return (
               <Col sm="3">
-              <Card>
-                <CardImg top width="100%" style={pictureStyle} src={source} alt="Card image cap" />
+              <Card className="rounded">
+                <CardImg top width="100%" style={pictureStyle} src={source} alt="Card image cap"/>
                 <CardBody>
                   <CardTitle style={titleStyle}>{props.title}</CardTitle>
                   <Button style={buttonStyle}><a style={linkStyle} href="/auth/google">Login For Cart</a></Button>
