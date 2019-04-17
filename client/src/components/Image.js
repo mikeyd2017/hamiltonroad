@@ -7,13 +7,14 @@ const Image = (props) => {
     const source = require('../images/' + props.source);
 
     const pictureStyle = {
-        width: '150px',
-        margin: '0px 0px 0px 20%'
+        width: '70%',
+        margin: '0px 15% 0px 15%'
     };
 
     const buttonStyle = {
-      margin: '0px 0px 2% 20%',
-      width: '150px'
+      margin: '0 15% 2% 15%',
+      width: '70%',
+      fontSize: '.9vwvw'
     }
 
     const linkStyle = {
@@ -22,7 +23,11 @@ const Image = (props) => {
     }
 
     const titleStyle = {
-      margin: '2% 0px 2% 31.5%'
+      margin: '2% 15% 2% 15%',
+      width: '70%',
+      height: '20%',
+      textAlign: 'center',
+      fontSize: '1.5vw'
     }
 
     const cardStyle = {
@@ -33,7 +38,7 @@ const Image = (props) => {
       {
         case false:
             return (
-              <Col sm="3">
+              <Col sm="3" md="3">
               <Card className="rounded">
                 <CardImg top width="100%" style={pictureStyle} src={source} alt="Card image cap"/>
                 <CardBody>
@@ -45,7 +50,7 @@ const Image = (props) => {
             )
         default:
               return (
-                <Col sm="3">
+                <Col sm="3" md="3">
                 <Card>
                   <CardImg top width="100%" style={pictureStyle} src={source} alt="Card image cap" />
                   <CardBody>
