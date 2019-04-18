@@ -12,9 +12,10 @@ const Image = (props) => {
     };
 
     const buttonStyle = {
-      margin: '0 15% 2% 15%',
-      width: '70%',
-      fontSize: '.9vwvw'
+      margin: '0 5% 1% 5%',
+      width: '90%',
+      fontSize: '1em',
+      fontAlign: 'center'
     }
 
     const linkStyle = {

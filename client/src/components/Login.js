@@ -21,7 +21,6 @@ class Login extends Component {
                     <div>
                     <Container>
                     <h2 style={spanStyle}>{this.props.auth.name}</h2>
-                    <span style={spanStyle}>Logout Here</span>
                     <Button style={buttonStyle} href="/api/logout">Logout</Button>
                     </Container>
                     </div>
@@ -32,9 +31,9 @@ class Login extends Component {
 
 const spanStyle = {
     color: 'white',
-    fontSize: '2vw',
+    fontSize: '2em',
     textAlign: 'center',
-    margin: '0 10% 0 10%'
+    margin: '0 5% 2% 5%'
 }
 
 const divStyle = {
@@ -42,9 +41,10 @@ const divStyle = {
 }
 
 const buttonStyle = {
-    margin: '0 15% 2% 15%',
-    fontSize: '1vw',
-    width: '70%'
+    margin: '0 5% 1% 5%',
+    width: '90%',
+    fontSize: '1em',
+    fontAlign: 'center'
   }
 
 function mapStateToProps({ auth }) {
