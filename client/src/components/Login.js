@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import GoogleButton from 'react-google-button';
 import { withRouter } from 'react-router';
+import Cart from './Cart.js';
 import { Button, Col, Container} from 'reactstrap';
 class Login extends Component {
     render() {
@@ -11,8 +12,8 @@ class Login extends Component {
               return (
                     <div>
                     <Container>
-                    <h2 style={spanStyle}>Login Here</h2>
-                    <Button style={buttonStyle} href="/auth/google">Login to Google</Button>
+                    <h2 style={nameStyle}>Login Here</h2>
+                    <Button style={loginButtonStyle} href="/auth/google">Login to Google</Button>
                     </Container>
                     </div>
               )
@@ -20,8 +21,10 @@ class Login extends Component {
                 return (
                     <div>
                     <Container>
-                    <h2 style={spanStyle}>{this.props.auth.name}</h2>
-                    <Button style={buttonStyle} href="/api/logout">Logout</Button>
+                    <h2 style={nameStyle}>{this.props.auth.name}</h2>
+                    <h2 style={emailStyle}>{this.props.auth.email}</h2>
+                    <Cart></Cart>
+                    <Button style={loginButtonStyle} href="/api/logout">Logout</Button>
                     </Container>
                     </div>
                 )
@@ -29,23 +32,33 @@ class Login extends Component {
     }
 }
 
-const spanStyle = {
+const nameStyle = {
     color: 'white',
     fontSize: '2em',
     textAlign: 'center',
     margin: '0 5% 2% 5%'
 }
 
+const emailStyle = {
+    color: 'white',
+    fontSize: '1.2em',
+    textAlign: 'center',
+    margin: '0 0% 2% 0%'
+}
+
 const divStyle = {
     marginLeft: '10px'
 }
 
-const buttonStyle = {
-    margin: '0 5% 1% 5%',
+const loginButtonStyle = {
+    margin: '30% 5% 1% 5%',
     width: '90%',
     fontSize: '1em',
     fontAlign: 'center'
-  }
+}
+
+
+
 
 function mapStateToProps({ auth }) {
     return {
@@ -53,4 +66,4 @@ function mapStateToProps({ auth }) {
     };
 }
 
-export default withRouter(connect(mapStateToProps)(Login))
+export default connect(mapStateToProps)(Login)

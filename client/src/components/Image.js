@@ -28,7 +28,7 @@ const Image = (props) => {
       width: '70%',
       height: '20%',
       textAlign: 'center',
-      fontSize: '1.5vw'
+      fontSize: '1.5em'
     }
 
     const cardStyle = {
@@ -56,6 +56,7 @@ const Image = (props) => {
                   <CardImg top width="100%" style={pictureStyle} src={source} alt="Card image cap" />
                   <CardBody>
                     <CardTitle style={titleStyle}>{props.title}</CardTitle>
+                    <CardText style={titleStyle}>${props.price}</CardText>
                     <Button style={buttonStyle}>Add to Cart <i className="small material-icons">add_shopping_cart</i></Button>
                   </CardBody>
                 </Card>

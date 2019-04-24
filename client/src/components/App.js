@@ -28,7 +28,7 @@ const containerStyleSide = {
     borderRight: '1px solid',
     borderColor: '#2AA499',
     boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
-    height: "25%",
+    width: "100%",
     borderRadius: "10px",
     marginTop: "10px",
 

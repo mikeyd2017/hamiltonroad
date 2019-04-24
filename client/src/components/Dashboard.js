@@ -8,7 +8,7 @@ import { Row } from 'reactstrap';
 class Dashboard extends Component {
 
     createImage(cards) {
-    return <Image source={cards.image} key={cards.image} title={cards.name}/>;
+    return <Image source={cards.image} key={cards.image} title={cards.name} price={cards.price}/>;
     }
 
     createImages(cards) {
