@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button, Row, Col } from 'reactstrap';
+import { withRouter } from 'react-router-dom';
+import * as actions from '../actions';
 
 const Image = (props) => {
     const source = require('../images/' + props.source);
@@ -35,6 +37,10 @@ const Image = (props) => {
       borderRadius: "px"
     }
 
+    const values = [
+      
+    ]
+
       switch (props.auth)
       {
         case false:
@@ -57,7 +63,7 @@ const Image = (props) => {
                   <CardBody>
                     <CardTitle style={titleStyle}>{props.title}</CardTitle>
                     <CardText style={titleStyle}>${props.price}</CardText>
-                    <Button style={buttonStyle}>Add to Cart <i className="small material-icons">add_shopping_cart</i></Button>
+                    <Button style={buttonStyle} onClick={() => this.props.submitCartBag(values, history)}>Add to Cart <i className="small material-icons">add_shopping_cart</i></Button>
                   </CardBody>
                 </Card>
               </Col>
@@ -85,4 +91,4 @@ const Image = (props) => {
     };
 }
 
-export default connect(mapStateToProps)(Image);
+export default connect(mapStateToProps, actions)(withRouter(Image));

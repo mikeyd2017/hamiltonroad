@@ -5,6 +5,20 @@ import { withRouter } from 'react-router';
 import Cart from './Cart.js';
 import { Button, Col, Container} from 'reactstrap';
 class Login extends Component {
+    componentDidMount() {
+        this.props.fetchCartBags();
+    }
+
+    renderCart() {
+        return this.props.cartBags.map(cartBag => {
+            return (
+                <div>
+                    <h2>{cartBag.title}</h2>
+                </div>
+            )
+        })
+    }
+    
     render() {
         switch (this.props.auth)
         {
@@ -60,10 +74,11 @@ const loginButtonStyle = {
 
 
 
-function mapStateToProps({ auth }) {
+function mapStateToProps({ auth, cartBags }) {
     return {
-        auth
+        auth,
+        cartBags
     };
 }
 
-export default connect(mapStateToProps)(Login)
+export default connect(mapStateToProps, { fetchCartBags })(Login);
